@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
 <meta charset="UTF-8">
@@ -8,10 +7,9 @@
 
 <title>HEALTH QUALITY 2077 | UNAD</title>
 
-<link rel="icon" href="/UNAD.ico" type="image/x-icon">
+<link rel="icon" href="UNAD.ico" type="image/x-icon">
 
 <meta name="theme-color" content="#00ffe5">
-
 <link rel="manifest" href="manifest.json">
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
@@ -37,7 +35,7 @@ overflow-x:hidden;
 }
 
 /* ======================================================
-FONDO
+BACKGROUND
 ====================================================== */
 
 body::before{
@@ -58,7 +56,7 @@ z-index:-5;
 }
 
 /* ======================================================
-CANVAS
+MATRIX
 ====================================================== */
 
 canvas{
@@ -121,7 +119,7 @@ animation-delay:4s;
 
 .loader-title{
 
-font-size:75px;
+font-size:70px;
 
 color:#00ffe5;
 
@@ -135,8 +133,6 @@ animation:pulse 1s infinite;
 margin-top:20px;
 
 font-size:22px;
-
-color:white;
 }
 
 @keyframes pulse{
@@ -202,6 +198,7 @@ display:flex;
 gap:20px;
 
 list-style:none;
+
 flex-wrap:wrap;
 }
 
@@ -212,8 +209,6 @@ text-decoration:none;
 color:white;
 
 transition:0.3s;
-
-font-size:14px;
 }
 
 nav ul li a:hover{
@@ -239,17 +234,11 @@ align-items:center;
 text-align:center;
 
 padding:20px;
-
-position:relative;
-overflow:hidden;
 }
 
 .hero-content{
 
-position:relative;
-z-index:2;
-
-max-width:1100px;
+max-width:1000px;
 }
 
 .hero h1{
@@ -268,8 +257,6 @@ margin-bottom:20px;
 font-size:28px;
 
 margin-bottom:25px;
-
-text-shadow:0 0 15px #00ffe5;
 }
 
 .hero p{
@@ -316,7 +303,7 @@ background:white;
 }
 
 /* ======================================================
-SECCIONES
+SECTIONS
 ====================================================== */
 
 section{
@@ -325,7 +312,7 @@ padding:120px 10%;
 
 .section-title{
 
-font-size:55px;
+font-size:50px;
 
 text-align:center;
 
@@ -362,15 +349,11 @@ border:1px solid #00ffe555;
 
 backdrop-filter:blur(15px);
 
-box-shadow:0 0 20px rgba(0,255,229,0.1);
-
 transition:0.5s;
 
 cursor:pointer;
 
-position:relative;
-
-overflow:hidden;
+box-shadow:0 0 20px rgba(0,255,229,0.1);
 }
 
 .card:hover{
@@ -478,7 +461,7 @@ color:#00ffe5;
 }
 
 /* ======================================================
-MEDIA GRID
+MEDIA
 ====================================================== */
 
 .media-grid{
@@ -522,12 +505,10 @@ height:700px;
 border:none;
 
 border-radius:25px;
-
-margin-top:25px;
 }
 
 /* ======================================================
-GALERIA
+CAROUSEL
 ====================================================== */
 
 .carousel-container{
@@ -573,23 +554,6 @@ transform:translateX(-50%);
 }
 
 /* ======================================================
-FOOTER
-====================================================== */
-
-footer{
-
-padding:60px;
-
-text-align:center;
-
-background:black;
-
-border-top:1px solid #00ffe555;
-
-line-height:2;
-}
-
-/* ======================================================
 AURA
 ====================================================== */
 
@@ -621,6 +585,23 @@ width:90px;
 height:90px;
 
 border-radius:50%;
+}
+
+/* ======================================================
+FOOTER
+====================================================== */
+
+footer{
+
+padding:60px;
+
+text-align:center;
+
+background:black;
+
+border-top:1px solid #00ffe555;
+
+line-height:2;
 }
 
 /* ======================================================
@@ -659,6 +640,22 @@ height:200px;
 <body>
 
 <!-- ======================================================
+MÚSICA DE FONDO
+====================================================== -->
+
+<div style="display:none;">
+
+<iframe
+width="0"
+height="0"
+src="https://www.youtube.com/embed/DhHGDOgjie4?autoplay=1&loop=1&playlist=DhHGDOgjie4"
+frameborder="0"
+allow="autoplay">
+</iframe>
+
+</div>
+
+<!-- ======================================================
 LOADER
 ====================================================== -->
 
@@ -681,13 +678,13 @@ CURSOR
 <div class="cursor"></div>
 
 <!-- ======================================================
-MATRIX
+CANVAS
 ====================================================== -->
 
 <canvas id="matrix"></canvas>
 
 <!-- ======================================================
-IA
+AURA
 ====================================================== -->
 
 <div id="aura">
@@ -755,7 +752,7 @@ PAMEC y transformación digital.
 <br><br>
 
 <img
-src="./UNAD.ico"
+src="UNAD.ico"
 style="
 width:120px;
 height:120px;
@@ -862,24 +859,28 @@ SERVICIOS
 
 <div class="cards">
 
-<div class="card">
+<div class="card" onclick="openService('pamec')">
 <h3>📋 PAMEC</h3>
-<p>Programa de mejoramiento continuo.</p>
+<p>Programa de Auditoría para el Mejoramiento de la Calidad.</p>
+<button>Ver Información</button>
 </div>
 
-<div class="card">
+<div class="card" onclick="openService('auditoria')">
 <h3>🏥 Auditoría</h3>
-<p>Evaluación de procesos clínicos.</p>
+<p>Evaluación estratégica de procesos institucionales.</p>
+<button>Ver Información</button>
 </div>
 
-<div class="card">
+<div class="card" onclick="openService('habilitacion')">
 <h3>⚕️ Habilitación</h3>
-<p>Cumplimiento normativo.</p>
+<p>Cumplimiento normativo y estándares.</p>
+<button>Ver Información</button>
 </div>
 
-<div class="card">
+<div class="card" onclick="openService('capacitacion')">
 <h3>🧠 Capacitación</h3>
-<p>Entrenamiento en calidad.</p>
+<p>Fortalecimiento del talento humano.</p>
+<button>Ver Información</button>
 </div>
 
 </div>
@@ -901,41 +902,33 @@ NORMATIVIDAD
 <div class="card">
 <h3>📋 Decreto 1011</h3>
 <p>Sistema Obligatorio de Garantía de Calidad.</p>
-
 <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=19975" target="_blank">
 <button>Ver Norma</button>
 </a>
-
 </div>
 
 <div class="card">
 <h3>🏥 Resolución 3100</h3>
 <p>Condiciones de habilitación.</p>
-
 <a href="https://www.minsalud.gov.co" target="_blank">
 <button>Consultar</button>
 </a>
-
 </div>
 
 <div class="card">
 <h3>⚡ PAMEC</h3>
-<p>Auditoría para el mejoramiento.</p>
-
+<p>Auditoría para el mejoramiento continuo.</p>
 <a href="https://www.minsalud.gov.co" target="_blank">
 <button>Ver</button>
 </a>
-
 </div>
 
 <div class="card">
 <h3>🌎 OMS</h3>
 <p>Organización Mundial de la Salud.</p>
-
 <a href="https://www.who.int/es" target="_blank">
 <button>Ingresar</button>
 </a>
-
 </div>
 
 </div>
@@ -1011,40 +1004,6 @@ GALERIA
 </section>
 
 <!-- ======================================================
-APP MOVIL
-====================================================== -->
-
-<section id="appmovil">
-
-<h2 class="section-title">
-📱 Aplicación Inteligente
-</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>
-🚀 Sistema Instalable
-</h3>
-
-<p>
-
-Puede instalarse como aplicación móvil.
-
-</p>
-
-<button onclick="showInstallInfo()">
-📲 Cómo instalar
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ======================================================
 CONTACTO
 ====================================================== -->
 
@@ -1106,21 +1065,35 @@ color:#00ffe5;
 </h2>
 
 <p>
-
 Proyecto Académico UNAD
-
 </p>
 
 <p>
-
 👨‍💻 Manuel Ricardo Chamorro Ruano
-
 </p>
 
 </footer>
 
 <!-- ======================================================
-MODAL
+SERVICE MODAL
+====================================================== -->
+
+<div id="serviceModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeService()">
+✖
+</span>
+
+<div id="serviceContent"></div>
+
+</div>
+
+</div>
+
+<!-- ======================================================
+MEDIA MODAL
 ====================================================== -->
 
 <div id="mediaModal" class="modal">
@@ -1132,38 +1105,6 @@ MODAL
 </span>
 
 <div id="mediaContent"></div>
-
-</div>
-
-</div>
-
-<!-- ======================================================
-INSTALL MODAL
-====================================================== -->
-
-<div id="installModal" class="modal">
-
-<div class="modal-content">
-
-<span class="close" onclick="closeInstall()">
-✖
-</span>
-
-<h2>
-📲 Instalar Aplicación
-</h2>
-
-<br>
-
-<p style="line-height:2;">
-
-1. Abrir en Chrome<br><br>
-
-2. Presionar los 3 puntos<br><br>
-
-3. Agregar a pantalla principal
-
-</p>
 
 </div>
 
@@ -1241,13 +1182,151 @@ drops[i]++;
 setInterval(draw,33);
 
 /* ======================================================
+SERVICES
+====================================================== */
+
+function openService(tipo){
+
+let content=document.getElementById("serviceContent");
+
+let html="";
+
+if(tipo==="pamec"){
+
+html=`
+
+<h2 style="color:#00ffe5;">📋 PAMEC</h2>
+
+<br>
+
+<p style="line-height:2;font-size:18px;">
+
+Programa orientado al mejoramiento continuo
+de la calidad en salud.
+
+</p>
+
+<br>
+
+<iframe
+width="100%"
+height="500"
+src="https://www.youtube.com/embed/lvLxQ4M3hL4"
+allowfullscreen
+style="border:none;border-radius:20px;">
+</iframe>
+
+`;
+
+}
+
+if(tipo==="auditoria"){
+
+html=`
+
+<h2 style="color:#00ffe5;">🏥 Auditoría</h2>
+
+<br>
+
+<p style="line-height:2;font-size:18px;">
+
+Evaluación de procesos institucionales
+y clínicos.
+
+</p>
+
+<br>
+
+<iframe
+width="100%"
+height="500"
+src="https://www.youtube.com/embed/4WvX9dBjiJo"
+allowfullscreen
+style="border:none;border-radius:20px;">
+</iframe>
+
+`;
+
+}
+
+if(tipo==="habilitacion"){
+
+html=`
+
+<h2 style="color:#00ffe5;">⚕️ Habilitación</h2>
+
+<br>
+
+<p style="line-height:2;font-size:18px;">
+
+Condiciones y estándares para servicios de salud.
+
+</p>
+
+<br>
+
+<iframe
+width="100%"
+height="500"
+src="https://www.youtube.com/embed/r5m6ScpU0yY"
+allowfullscreen
+style="border:none;border-radius:20px;">
+</iframe>
+
+`;
+
+}
+
+if(tipo==="capacitacion"){
+
+html=`
+
+<h2 style="color:#00ffe5;">🧠 Capacitación</h2>
+
+<br>
+
+<p style="line-height:2;font-size:18px;">
+
+Fortalecimiento de competencias
+del talento humano.
+
+</p>
+
+<br>
+
+<iframe
+width="100%"
+height="500"
+src="https://www.youtube.com/embed/lvLxQ4M3hL4"
+allowfullscreen
+style="border:none;border-radius:20px;">
+</iframe>
+
+`;
+
+}
+
+content.innerHTML=html;
+
+document.getElementById("serviceModal")
+.style.display="flex";
+
+}
+
+function closeService(){
+
+document.getElementById("serviceModal")
+.style.display="none";
+
+}
+
+/* ======================================================
 MEDIA
 ====================================================== */
 
 function openMedia(tipo){
 
-let content=
-document.getElementById("mediaContent");
+let content=document.getElementById("mediaContent");
 
 let html="";
 
@@ -1255,7 +1334,9 @@ if(tipo==="juego"){
 
 html=`
 
-<h2>🎮 Juego PAMEC</h2>
+<h2 style="color:#00ffe5;">
+🎮 Juego PAMEC
+</h2>
 
 <iframe
 class="game-frame"
@@ -1347,24 +1428,6 @@ document.getElementById("mediaModal")
 function closeMedia(){
 
 document.getElementById("mediaModal")
-.style.display="none";
-
-}
-
-/* ======================================================
-INSTALL
-====================================================== */
-
-function showInstallInfo(){
-
-document.getElementById("installModal")
-.style.display="flex";
-
-}
-
-function closeInstall(){
-
-document.getElementById("installModal")
 .style.display="none";
 
 }
